@@ -16,6 +16,7 @@ class TraversabilityDataset(DataLoader.Dataset):
         self.image_size     = params.input_size
         self.depth_mean     = params.depth_mean
         self.depth_std      = params.depth_std
+        self.bin_width      = 0.2
         
         # Read lines in csv file
         self.data = pd.read_csv(params.csv_path)
@@ -112,7 +113,6 @@ class TraversabilityDataset(DataLoader.Dataset):
         return color_img, depth_img, path_img, mu_img, nu_img
 
     def prepare_weights(self):
-        bin_width = 0.2
         labels_data = []
         for idx in range(len(self.mu_fname)):
             mu_fname = self.mu_fname[idx]
@@ -130,9 +130,9 @@ class TraversabilityDataset(DataLoader.Dataset):
             labels_data.extend(data_image.flatten().tolist())
 
         # Draw the plot
-        values, bins = np.histogram(labels_data, bins = int(1/bin_width), range=(0,1), density=True)
+        values, bins = np.histogram(labels_data, bins = int(1/self.bin_width), range=(0,1), density=True)
 
-        return 0.1/values, bins
+        return (1-values*self.bin_width), bins
 
     def get_depth_stats(self):
         psum = 0.0

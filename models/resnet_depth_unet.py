@@ -18,7 +18,10 @@ class ResnetDepthUnet(nn.Module):
         self.block5 = model.layer4
 
         # Depth encoder
-        self.block1_depth = nn.Conv2d(in_channels=1, out_channels=64, kernel_size=7, padding=3, stride=2, bias=False)
+        self.block1_depth = nn.Sequential(
+            nn.Conv2d(in_channels=1, out_channels=64, kernel_size=7, padding=3, stride=2, bias=False),
+            nn.BatchNorm2d(64),
+            nn.ReLU(inplace=True))
         self.block2_depth = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, padding=1, stride=2, bias=False),
             nn.BatchNorm2d(64),
