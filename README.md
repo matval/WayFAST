@@ -11,6 +11,5 @@ Paper website: https://mateusgasparino.com/wayfast-traversability-navigation/
   title={WayFAST: Navigation with Predictive Traversability in the Field},
   author={Gasparino, Mateus Valverde and Sivakumar, Arun Narenthiran and Liu, Yixiao and Velasquez, Andres Eduardo Baquero and Higuti, Vitor Akihiro Hisano and Rogers, John and Tran, Huy and Chowdhary, Girish},
   journal={IEEE Robotics and Automation Letters},
-  year={2022}
-}
+  year={2022}}
 ```
