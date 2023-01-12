@@ -3,7 +3,7 @@ Mateus V. Gasparino, Arun N. Sivakumar, Yixiao Liu, Andres E. B. Velasquez, Vito
 
 Paper website: https://mateusgasparino.com/wayfast-traversability-navigation/
 
-<img src="./images/WayFAST.jpg" width="700">
+<img src="./wayfast/images/WayFAST.jpg" width="700">
 
 ## Download our dataset:
 `curl -L  https://uofi.box.com/shared/static/wryubgcx24y0i3bt8n6cbkqpmtg8pe02 --output myfile.zip`
